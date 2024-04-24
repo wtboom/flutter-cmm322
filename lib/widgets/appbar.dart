@@ -13,9 +13,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: currentPageIndex == 0 || currentPageIndex == 3
-          ? Colors.transparent
-          : Colors.white,
+      backgroundColor: Colors.transparent,
       leading: currentPageIndex == 0
           ? null
           : SizedBox(

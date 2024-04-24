@@ -26,46 +26,63 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
-  final PageController _pageController = PageController(initialPage: 0);
+  final PageController _pageController = PageController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 24, 24, 24),
+      extendBodyBehindAppBar: true,
       appBar: MyAppBar(
         currentPageIndex: _currentIndex,
         pageController: _pageController,
       ),
-      body: Stack(children: [
-        PageView(
-          controller: _pageController,
-          onPageChanged: (index) {
-            setState(() {
-              _currentIndex = index;
-            });
-          },
-          children: [
-            homePage(),
-            ScanPage(),
-            PointPage(),
-            profilePage(),
-          ],
-        ),
-        Positioned(
-            bottom: 10,
-            left: 0,
-            right: 0,
-            child: myBottomNavbar(
-              selectedIndex: _currentIndex,
-              onIndexChanged: (index) {
-                _pageController.animateToPage(
-                  index,
-                  duration: Duration(milliseconds: 300),
-                  curve: Curves.ease,
-                );
+      body: Container(
+          padding: EdgeInsets.only(top: 120),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                _currentIndex != 0
+                    ? Color.fromRGBO(129, 218, 246, 1)
+                    : Colors.white,
+                _currentIndex != 0
+                    ? Colors.white
+                    : Color.fromARGB(255, 24, 24, 24),
+              ],
+              stops: [0.0, _currentIndex != 3 ? 0.0 : 0.3],
+            ),
+          ),
+          child: Stack(children: [
+            PageView(
+              controller: _pageController,
+              onPageChanged: (index) {
+                setState(() {
+                  _currentIndex = index;
+                });
               },
-            ))
-      ]),
+              children: [
+                homePage(),
+                ScanPage(),
+                PointPage(),
+                profilePage(),
+              ],
+            ),
+            Positioned(
+                bottom: 10,
+                left: 0,
+                right: 0,
+                child: myBottomNavbar(
+                  selectedIndex: _currentIndex,
+                  onIndexChanged: (index) {
+                    _pageController.animateToPage(
+                      index,
+                      duration: Duration(milliseconds: 300),
+                      curve: Curves.ease,
+                    );
+                  },
+                ))
+          ])),
     );
   }
 }

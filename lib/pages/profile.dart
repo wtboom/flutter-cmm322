@@ -35,22 +35,10 @@ class _profilePageState extends State<profilePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: SingleChildScrollView(
+    return SingleChildScrollView(
       child: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Color.fromRGBO(129, 218, 246, 1),
-              Colors.white,
-            ],
-            stops: [0.0, 0.2],
-          ),
-        ),
         child: Stack(
           children: [
             Positioned(
@@ -415,7 +403,7 @@ class _profilePageState extends State<profilePage> {
           ],
         ),
       ),
-    ));
+    );
   }
 
   Widget _buildCard(String item, int index) {

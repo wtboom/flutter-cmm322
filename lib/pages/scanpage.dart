@@ -11,9 +11,8 @@ class ScanPage extends StatefulWidget {
 class _ScanPageState extends State<ScanPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Center(
+    return Center(
       child: Text('This is ScanPage'),
-    ));
+    );
   }
 }
