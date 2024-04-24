@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   final int currentPageIndex;
@@ -49,18 +50,30 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       actions: <Widget>[
+        currentPageIndex != 3
+            ? Padding(
+                padding: EdgeInsets.only(right: 12),
+                child: FaIcon(
+                    currentPageIndex != 0
+                        ? FontAwesomeIcons.clockRotateLeft
+                        : FontAwesomeIcons.magnifyingGlass,
+                    size: 32,
+                    color: currentPageIndex == 0
+                        ? Colors.white
+                        : Color(0xFF242424)),
+              )
+            : SizedBox(),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 0),
-          child: Icon(Icons.history,
+          padding: EdgeInsets.only(right: 30),
+          child: FaIcon(
+              currentPageIndex == 3
+                  ? FontAwesomeIcons.gear
+                  : (currentPageIndex != 0
+                      ? FontAwesomeIcons.gift
+                      : FontAwesomeIcons.bell),
               size: 32,
               color: currentPageIndex == 0 ? Colors.white : Color(0xFF242424)),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 12),
-          child: Icon(CupertinoIcons.gift,
-              size: 32,
-              color: currentPageIndex == 0 ? Colors.white : Color(0xFF242424)),
-        ),
+        )
       ],
     );
   }

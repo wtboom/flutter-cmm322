@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:binny_application/pages/comment.dart';
 import 'package:binny_application/pages/donationpage.dart';
 import 'package:binny_application/pages/howto.dart';

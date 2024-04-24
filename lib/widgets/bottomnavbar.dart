@@ -1,23 +1,24 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/widgets.dart';
 
 var myIcon = [
   {
     'title': 'หน้าแรก',
-    'icon': Icons.home_max_rounded,
+    'icon': FontAwesomeIcons.house,
   },
   {
     'title': 'สแกนขยะ',
-    'icon': Icons.scanner_rounded,
+    'icon': FontAwesomeIcons.barcode,
   },
   {
     'title': 'แต้มสะสม',
-    'icon': Icons.score_rounded,
+    'icon': FontAwesomeIcons.gift,
   },
   {
     'title': 'โปรไฟล์',
-    'icon': Icons.person,
+    'icon': FontAwesomeIcons.user,
   },
 ];
 
@@ -70,17 +71,17 @@ class _myBottomNavbarState extends State<myBottomNavbar> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Icon(
+                FaIcon(
                   icon,
                   color: widget.selectedIndex == index
-                      ? Colors.green
+                      ? Color(0xFF29D062)
                       : Colors.grey, // Change icon color based on selection
                 ),
                 Text(
                   title,
                   style: TextStyle(
                     color: widget.selectedIndex == index
-                        ? Colors.green
+                        ? Color(0xFF29D062)
                         : Colors.grey,
                   ),
                 ),
