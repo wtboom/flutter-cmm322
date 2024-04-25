@@ -86,8 +86,21 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-class homePage extends StatelessWidget {
-  const homePage({super.key});
+class homePage extends StatefulWidget {
+  homePage({super.key});
+
+  @override
+  State<homePage> createState() => _homePageState();
+}
+
+class _homePageState extends State<homePage> {
+  bool _onShow = false;
+
+  void setOnShow(bool value) {
+    setState(() {
+      _onShow = value;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -102,13 +115,29 @@ class homePage extends StatelessWidget {
           ),
         ),
       ),
-      Positioned(child: HomePagecontent()),
+      Positioned(
+          child: HomePagecontent(
+        onShowChanged: setOnShow,
+      )),
+      if (_onShow)
+        Positioned.fill(
+          child: GestureDetector(
+              onTap: () {
+                setOnShow(false);
+              },
+              child: Container(
+                padding: EdgeInsets.all(10),
+                color: Colors.black.withOpacity(0.6),
+                child: Image.asset('assets/homepage/Group_111.png'),
+              )),
+        )
     ]);
   }
 }
 
 class HomePagecontent extends StatelessWidget {
-  const HomePagecontent({super.key});
+  final Function(bool) onShowChanged;
+  HomePagecontent({Key? key, required this.onShowChanged});
 
   Widget myIcon(String img, bool big, BuildContext context, String topic) {
     final String imgPath = 'assets/homepage/$img';
@@ -276,7 +305,9 @@ class HomePagecontent extends StatelessWidget {
 
   Widget qrCodeContainer(BuildContext context) {
     return GestureDetector(
-        onTap: () async => await QrPopup(context),
+        onTap: () {
+          onShowChanged(true);
+        },
         child: Container(
             padding: EdgeInsets.all(16.0),
             height: 177,
@@ -365,22 +396,6 @@ class HomePagecontent extends StatelessWidget {
                 )
               ],
             )));
-  }
-
-  Future<void> QrPopup(BuildContext context) {
-    return showDialog<void>(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          content: Image.asset(
-            'assets/homepage/Group_111.png',
-            width: 500,
-            height: 260,
-            fit: BoxFit.cover,
-          ),
-        );
-      },
-    );
   }
 
   Widget interact_content(String img, String topic, BuildContext context) {
