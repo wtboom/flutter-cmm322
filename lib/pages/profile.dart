@@ -317,37 +317,34 @@ class _profilePageState extends State<profilePage> {
                       ),
                       SizedBox(height: 20),
                       Center(
-                        child: Container(
-                          width: MediaQuery.of(context).size.width * 0.9,
-                          height: MediaQuery.of(context).size.height * 0.25,
-                          decoration: BoxDecoration(
-                            color: Colors.transparent,
-                            borderRadius: BorderRadius.circular(10),
-                            border:
-                                Border.all(color: Colors.transparent, width: 2),
-                          ),
-                          child: ListView(
-                            children: <Widget>[
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  _buildCard(items[0], 4),
-                                  _buildCard(items[1], 1),
-                                ],
-                              ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  _buildCard(items[2], 2),
-                                  _buildCard(items[3], 3),
-                                ],
-                              ),
-                            ],
-                          ),
+                          child: Container(
+                        width: MediaQuery.of(context).size.width * 0.9,
+                        height: MediaQuery.of(context).size.height * 0.25,
+                        decoration: BoxDecoration(
+                          color: Colors.transparent,
+                          borderRadius: BorderRadius.circular(10),
+                          border:
+                              Border.all(color: Colors.transparent, width: 2),
                         ),
-                      )
+                        child: ListView(
+                          shrinkWrap: true,
+                          padding: EdgeInsets.zero,
+                          children: <Widget>[
+                            Row(
+                              children: [
+                                _buildCard(items[0], 4),
+                                _buildCard(items[1], 1),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                _buildCard(items[2], 2),
+                                _buildCard(items[3], 3),
+                              ],
+                            ),
+                          ],
+                        ),
+                      )),
                     ],
                   ),
                 ),

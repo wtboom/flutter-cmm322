@@ -7,13 +7,22 @@ environment:
   sdk: ">=3.3.4 <4.0.0"
 
 dependencies:
+  #Widget
   carousel_slider: ^4.2.1
+  sliding_up_panel: ^2.0.0+1
+
+  #Icons
   cupertino_icons: ^1.0.8
+  font_awesome_flutter: ^10.7.0
+
   flutter:
     sdk: flutter
-  font_awesome_flutter: ^10.7.0
+
+  #Font
   google_fonts: ^6.2.1
-  sliding_up_panel: ^2.0.0+1
+
+  #Firebase
+  firebase_core: ^2.30.1
 
 dev_dependencies:
   flutter_test:

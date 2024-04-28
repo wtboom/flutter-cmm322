@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "95359687504",
+    "project_id": "binnyapp-b7a0c",
+    "storage_bucket": "binnyapp-b7a0c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:95359687504:android:7a5858ee150caf99392a55",
+        "android_client_info": {
+          "package_name": "com.example.binny_application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "95359687504-i8898k1u8mbqgc13p26oqtel1gqbncrs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.binny_application",
+            "certificate_hash": "f22afebda78e25d41c9d016e906ff01760c92a3a"
+          }
+        },
+        {
+          "client_id": "95359687504-4vbmvmf1guonu9v2c91v5kgio3q7jatd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwSrlgDf7SF5KBNw5seGFGraDQiUwSFTU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "95359687504-4vbmvmf1guonu9v2c91v5kgio3q7jatd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "95359687504-465tlca5r28pf4g1t799kjpqql3bqbqf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.binnyApplication"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
