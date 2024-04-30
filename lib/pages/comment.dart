@@ -315,7 +315,6 @@ class forMeContainer extends StatelessWidget {
                 children: [
                   Container(
                     // color: Colors.pink,
-                    width: 310,
                     child: Row(children: [
                       ClipOval(
                         child: Image.asset('assets/katoo/$PostprofileImg.jpg',
