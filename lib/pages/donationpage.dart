@@ -1,25 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-
-void main() {
-  runApp(const donationPage());
-}
+import 'package:flutter/material.dart';
 
 class donationPage extends StatelessWidget {
   const donationPage({Key? key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Binny',
-      home: HomeScreen(),
-      debugShowCheckedModeBanner: false,
-    );
-  }
-}
-
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,11 +23,15 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(right: 7),
-                          child: Icon(
-                            Icons.arrow_back_ios_new_rounded,
-                            color: Color(0xFF242424),
-                            size: 28,
-                          ),
+                          child: IconButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              icon: Icon(
+                                Icons.arrow_back_ios_new_rounded,
+                                color: Color(0xFF242424),
+                                size: 28,
+                              )),
                         ),
                         Image.asset(
                           "assets/donationpage/Binny.png",
@@ -73,9 +60,9 @@ class HomeScreen extends StatelessWidget {
                 width: double.infinity,
                 child: CarouselSlider(
                   items: [
-                    'assets/donationpage/kaya1.png',
-                    'assets/donationpage/kaya2.png',
-                    'assets/donationpage/kaya3.png',
+                    'assets/kaya1.png',
+                    'assets/kaya2.png',
+                    'assets/kaya3.png',
                   ].map((imagePath) {
                     return Container(
                       margin: EdgeInsets.all(3),
